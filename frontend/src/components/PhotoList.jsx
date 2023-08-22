@@ -57,11 +57,12 @@ const sampleDataForPhotoList = [
 ];
 
 
-const PhotoList = () => {
+const PhotoList = (props) => {
+ //The below was used for hardcoded example data
   // const photos = new Array(3)
-  const photos = sampleDataForPhotoList
-
-  const PhotoArray = photos.map((photo, index)=>{
+  // const photos = sampleDataForPhotoList
+  
+  const PhotoArray = props.photos.map((photo, index)=>{
     return <PhotoListItem 
     key={index} 
     id={photo.id}
