@@ -10,10 +10,16 @@ import TopNavigationBar from './components/TopNavigationBar'
 import HomeRoute from 'routes/HomeRoute';
 import {useState} from 'react'
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+import photos from 'mocks/photos';
+
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  
+
+  //Create state object
+const [favorites, setFavorites] = useState([]);
+
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -28,8 +34,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto}/>
-      {modalOpen && <PhotoDetailsModal closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto}/>}
+      <HomeRoute favorites={favorites} setFavorites={setFavorites} openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto} photos={photos}/>
+      {modalOpen && <PhotoDetailsModal favorites={favorites} setFavorites={setFavorites} closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto} photos={photos}/>}
       {/* <TopNavigationBar/> */}
       {/* <TopicList/> */}
       {/* <PhotoList/> */}

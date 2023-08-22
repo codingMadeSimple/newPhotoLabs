@@ -61,8 +61,9 @@ const PhotoList = (props) => {
  //The below was used for hardcoded example data
   // const photos = new Array(3)
   // const photos = sampleDataForPhotoList
-
   
+
+  // console.log(props,"----------------------------------------")
   const PhotoArray = props.photos.map((photo, index)=>{
     return <PhotoListItem 
     key={index} 
