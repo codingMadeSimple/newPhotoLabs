@@ -24,11 +24,12 @@ const App = () => {
     setModalOpen(false);
   };
 
+  const [selectPhoto, setSelectPhoto] = useState(false);
 
   return (
     <div className="App">
-      <HomeRoute openModal={openModal} closeModal={closeModal} modalState={modalOpen}/>
-      {modalOpen && <PhotoDetailsModal closeModal={closeModal}/>}
+      <HomeRoute openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto}/>
+      {modalOpen && <PhotoDetailsModal closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto}/>}
       {/* <TopNavigationBar/> */}
       {/* <TopicList/> */}
       {/* <PhotoList/> */}

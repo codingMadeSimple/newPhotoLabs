@@ -12,10 +12,12 @@ const HomeRoute = (props) => {
 //Create state object
 const [favorites, setFavorites] = useState([]);
 
+
+
   return (
     <div className="home-route">
       <TopNavigationBar favorites ={favorites} topics={topics}/>
-      <PhotoList openModal={props.openModal} closeModal={props.closeModal} modalState={props.modalState} favorites={favorites} setFavorites={setFavorites} photos={photos}/>
+      <PhotoList openModal={props.openModal} closeModal={props.closeModal} modalState={props.modalState} favorites={favorites} setFavorites={setFavorites} photos={photos} setSelectPhoto={props.setSelectPhoto}/>
       {/* Insert React */}
     </div>
   );

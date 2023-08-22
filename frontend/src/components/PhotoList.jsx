@@ -77,6 +77,8 @@ const PhotoList = (props) => {
     openModal={props.openModal} 
     closeModal={props.closeModal} 
     modalState={props.modalState}
+    setSelectPhoto={props.setSelectPhoto}
+    photo={photo}
     />
   })
 

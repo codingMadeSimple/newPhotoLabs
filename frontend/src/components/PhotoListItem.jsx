@@ -10,6 +10,8 @@ const PhotoListItem = (props) => {
 
   // }
 const modalToggle = function(){
+props.setSelectPhoto(props.photo)
+
   if(!props.modalState){
     props.openModal()
   }
