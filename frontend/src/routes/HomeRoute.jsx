@@ -14,7 +14,7 @@ const [favorites, setFavorites] = useState([]);
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={topics}/>
+      <TopNavigationBar favorites ={favorites} topics={topics}/>
       <PhotoList favorites={favorites} setFavorites={setFavorites} photos={photos}/>
       {/* Insert React */}
     </div>
