@@ -8,13 +8,27 @@ import TopicList from 'components/TopicList';
 import TopNavigation from 'components/TopNavigationBar';
 import TopNavigationBar from './components/TopNavigationBar'
 import HomeRoute from 'routes/HomeRoute';
+import {useState} from 'react'
+import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
 
   return (
     <div className="App">
-      <HomeRoute/>
+      <HomeRoute openModal={openModal} closeModal={closeModal} modalState={modalOpen}/>
+      {modalOpen && <PhotoDetailsModal/>}
       {/* <TopNavigationBar/> */}
       {/* <TopicList/> */}
       {/* <PhotoList/> */}

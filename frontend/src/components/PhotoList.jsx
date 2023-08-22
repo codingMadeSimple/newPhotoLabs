@@ -74,6 +74,9 @@ const PhotoList = (props) => {
     userCountryLocation={photo.location.country}
     favorites={props.favorites}
     setFavorites={props.setFavorites}
+    openModal={props.openModal} 
+    closeModal={props.closeModal} 
+    modalState={props.modalState}
     />
   })
 
