@@ -4,10 +4,16 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  console.log(props)
+  // console.log(props)
+
+  // const isFavorited={
+
+  // }
+
+
   return(
 <div className="photo-list__item">
-  <PhotoFavButton/>
+  <PhotoFavButton id={props.id} favorites={props.favorites} setFavorites={props.setFavorites}/>
   <img className="photo-list__image" src={props.imgURL}/>
   <div className="photo-list__user-details">
   <img className="photo-list__user-profile" src={props.userImgURL}/>

@@ -61,6 +61,7 @@ const PhotoList = (props) => {
  //The below was used for hardcoded example data
   // const photos = new Array(3)
   // const photos = sampleDataForPhotoList
+
   
   const PhotoArray = props.photos.map((photo, index)=>{
     return <PhotoListItem 
@@ -71,6 +72,8 @@ const PhotoList = (props) => {
     userName={photo.user.username}
     userCityLocation={photo.location.city}
     userCountryLocation={photo.location.country}
+    favorites={props.favorites}
+    setFavorites={props.setFavorites}
     />
   })
 
