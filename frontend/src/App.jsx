@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute openModal={openModal} closeModal={closeModal} modalState={modalOpen}/>
-      {modalOpen && <PhotoDetailsModal/>}
+      {modalOpen && <PhotoDetailsModal closeModal={closeModal}/>}
       {/* <TopNavigationBar/> */}
       {/* <TopicList/> */}
       {/* <PhotoList/> */}
