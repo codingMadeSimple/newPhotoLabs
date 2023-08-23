@@ -11,12 +11,16 @@ import HomeRoute from 'routes/HomeRoute';
 import {useState} from 'react'
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import photos from 'mocks/photos';
+import topics from 'mocks/topics';
+import Application from 'hooks/useApplicationData';
+
+
 
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
 
-  //Create state object
+  // Create state object
 const [favorites, setFavorites] = useState([]);
 
 
@@ -32,13 +36,16 @@ const [favorites, setFavorites] = useState([]);
 
   const [selectPhoto, setSelectPhoto] = useState(false);
 
+  // const {state, setFavorites, useSelectPhoto, closeModal} = Application()
+  // const {    
+  //   favorites,
+  //   modalOpen,
+  //   selectPhoto,} = state;
+
   return (
     <div className="App">
-      <HomeRoute favorites={favorites} setFavorites={setFavorites} openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto} photos={photos}/>
+      <HomeRoute favorites={favorites} setFavorites={setFavorites} openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto} photos={photos} topics={topics}/>
       {modalOpen && <PhotoDetailsModal favorites={favorites} setFavorites={setFavorites} closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto} photos={photos}/>}
-      {/* <TopNavigationBar/> */}
-      {/* <TopicList/> */}
-      {/* <PhotoList/> */}
     </div>
   );
 };
