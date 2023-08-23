@@ -10,8 +10,8 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-      <TopNavigationBar favorites ={props.favorites} topics={props.topics}/>
-      <PhotoList openModal={props.openModal} closeModal={props.closeModal} modalState={props.modalState} favorites={props.favorites} setFavorites={props.setFavorites} photos={props.photos} setSelectPhoto={props.setSelectPhoto}/>
+      <TopNavigationBar favorites ={props.favorites} addFavorite={props.addFavorite} removeFavorite={props.removeFavorite} topics={props.topics}/>
+      <PhotoList openModal={props.openModal} closeModal={props.closeModal} modalState={props.modalState} favorites={props.favorites} addFavorite={props.addFavorite} removeFavorite={props.removeFavorite} photos={props.photos} setSelectPhoto={props.setSelectPhoto}/>
       {/* Insert React */}
     </div>
   );

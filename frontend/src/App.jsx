@@ -2,13 +2,13 @@ import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
-import PhotoList from './components/PhotoList'
+import PhotoList from './components/PhotoList';
 import TopicListItem from 'components/TopicListItem';
 import TopicList from 'components/TopicList';
 import TopNavigation from 'components/TopNavigationBar';
-import TopNavigationBar from './components/TopNavigationBar'
+import TopNavigationBar from './components/TopNavigationBar';
 import HomeRoute from 'routes/HomeRoute';
-import {useState} from 'react'
+import { useState } from 'react';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import photos from 'mocks/photos';
 import topics from 'mocks/topics';
@@ -21,40 +21,40 @@ import useApplicationData from 'hooks/useApplicationData';
 const App = () => {
 
   // Create state object
-// const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
 
 
-//   const [modalOpen, setModalOpen] = useState(false);
+  //   const [modalOpen, setModalOpen] = useState(false);
 
-//   const openModal = () => {
-//     setModalOpen(true);
-//   };
+  //   const openModal = () => {
+  //     setModalOpen(true);
+  //   };
 
-//   const closeModal = () => {
-//     setModalOpen(false);
-//   };
+  //   const closeModal = () => {
+  //     setModalOpen(false);
+  //   };
 
-//   const [selectPhoto, setSelectPhoto] = useState(false);
+  //   const [selectPhoto, setSelectPhoto] = useState(false);
 
   const {
-    state, 
-    setFavorites, 
-    setSelectPhoto, 
+    state,
+    dispatch,
+    openModal,
     closeModal,
-    openModal
-  } = useApplicationData()
-  
-  const {    
-    favorites,
-    modalOpen,
-    selectPhoto,} = state;
+    addFavorite,
+    removeFavorite,
+    setSelectPhoto
+  } = useApplicationData();
+
+const {favorites, modalOpen, selectPhoto} = state
+
 
   return (
     <div className="App">
-      <HomeRoute favorites={favorites} setFavorites={setFavorites} openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto} photos={photos} topics={topics}/>
-      {modalOpen && <PhotoDetailsModal favorites={favorites} setFavorites={setFavorites} closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto} photos={photos}/>}
+      <HomeRoute favorites={favorites} addFavorite={addFavorite} removeFavorite={removeFavorite} openModal={openModal} closeModal={closeModal} modalState={modalOpen} setSelectPhoto={setSelectPhoto} photos={photos} topics={topics} />
+      {modalOpen && <PhotoDetailsModal favorites={favorites} addFavorite={addFavorite} removeFavorite={removeFavorite} closeModal={closeModal} selectPhoto={selectPhoto} setSelectPhoto={setSelectPhoto} photos={photos} />}
     </div>
   );
 };
-     {/* <PhotoListItem sampleData={sampleDataForPhotoListItem}/> */}
+{/* <PhotoListItem sampleData={sampleDataForPhotoListItem}/> */ }
 export default App;

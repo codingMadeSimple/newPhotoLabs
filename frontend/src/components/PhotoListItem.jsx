@@ -25,7 +25,7 @@ console.log(props)
 
   return(
 <div className="photo-list__item">
-  <PhotoFavButton id={props.id} favorites={props.favorites} setFavorites={props.setFavorites}/>
+  <PhotoFavButton id={props.id} favorites={props.favorites} addFavorite={props.addFavorite} removeFavorite={props.removeFavorite}/>
   <img className="photo-list__image" src={props.imgURL} onClick={modalToggle}/>
   <div className="photo-list__user-details">
   <img className="photo-list__user-profile" src={props.userImgURL}/>

@@ -7,23 +7,19 @@ function PhotoFavButton(props) {
     //Sets the state of the click
     const [click, setClick] = useState(false);
     
-    
-
+    console.log(props.id,"props ID ----------------")
     const handleClick=function(){
       //This will change the previous value of state and set it to the opposite value
-      props.setFavorites((prev)=>{
-        const newArray = [...prev]
-        if(newArray.includes(props.id)){
-          const index = newArray.indexOf(props.id)
-          newArray.splice(index, 1)
-        }else{
-          newArray.push(props.id)
-        }
-        return newArray
-      })
 
+      // console.log("is this props", props)
+
+      if(!props.favorites.includes(props.id)){
+        props.addFavorite(props.id);
+      } else {
+        props.removeFavorite(props.id);
+      }
     }
-    console.log(props.id,"----------------")
+
   return (
     <div onClick={handleClick} className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">

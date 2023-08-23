@@ -17,9 +17,9 @@ const PhotoDetailsModal = (props) => {
       <button className="photo-details-modal__close-button" onClick={props.closeModal}>
         <img src={closeSymbol} alt="close symbol" />
       </button>
-      <PhotoFavButton id={props.selectPhoto.id} favorites={props.favorites} setFavorites={props.setFavorites}/>
+      <PhotoFavButton id={props.selectPhoto.id} favorites={props.favorites} addFavorite={props.addFavorite} removeFavorite={props.removeFavorite}/>
       <img src={props.selectPhoto.urls.full} className ="photo-details-modal__image"/>
-      <PhotoList className ="photo-details-modal__images" photos={photos} favorites={props.favorites} setFavorites={props.setFavorites}/>
+      <PhotoList className ="photo-details-modal__images" photos={photos} favorites={props.favorites} addFavorite={props.addFavorite} removeFavorite={props.removeFavorite}/>
     </div>
   )
 };
