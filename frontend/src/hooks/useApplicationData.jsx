@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export default function Application(props) {
+export default function useApplicationData() {
 
   const [favorites, setFavorites] = useState([]);
 
@@ -31,7 +31,6 @@ export default function Application(props) {
       setSelectPhoto,
       closeModal,
       openModal, 
-      
 
     }
   );

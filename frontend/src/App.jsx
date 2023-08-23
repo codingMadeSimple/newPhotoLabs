@@ -12,7 +12,7 @@ import {useState} from 'react'
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import photos from 'mocks/photos';
 import topics from 'mocks/topics';
-import Application from 'hooks/useApplicationData';
+import useApplicationData from 'hooks/useApplicationData';
 
 
 
@@ -21,26 +21,33 @@ import Application from 'hooks/useApplicationData';
 const App = () => {
 
   // Create state object
-const [favorites, setFavorites] = useState([]);
+// const [favorites, setFavorites] = useState([]);
 
 
-  const [modalOpen, setModalOpen] = useState(false);
+//   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
+//   const openModal = () => {
+//     setModalOpen(true);
+//   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+//   const closeModal = () => {
+//     setModalOpen(false);
+//   };
 
-  const [selectPhoto, setSelectPhoto] = useState(false);
+//   const [selectPhoto, setSelectPhoto] = useState(false);
 
-  // const {state, setFavorites, useSelectPhoto, closeModal} = Application()
-  // const {    
-  //   favorites,
-  //   modalOpen,
-  //   selectPhoto,} = state;
+  const {
+    state, 
+    setFavorites, 
+    setSelectPhoto, 
+    closeModal,
+    openModal
+  } = useApplicationData()
+  
+  const {    
+    favorites,
+    modalOpen,
+    selectPhoto,} = state;
 
   return (
     <div className="App">
